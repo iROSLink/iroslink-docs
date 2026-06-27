@@ -1,0 +1,5 @@
+mkdocs>=1.5.3
+mkdocs-material>=9.5.0
+mike>=2.1.0
+mkdocs-static-i18n>=1.2.0
+mkdocs-macros-plugin>=1.0.0

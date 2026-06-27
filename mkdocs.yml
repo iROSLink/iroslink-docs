@@ -1,0 +1,140 @@
+site_name: iROSLink Docs (BETA)
+site_description: Turn your iPhone into a ROS2 sensor bridge for an affordable indoor robot.
+site_url: https://iroslink.app
+docs_dir: docs
+
+# Replace with your actual repo URL
+repo_url: https://github.com/iROSLink/iroslink-docs
+repo_name: iroslink-docs
+edit_uri: edit/main/public/iroslink-docs/docs/
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/icons/logo.png
+  favicon: assets/icons/logo.png
+  features:
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - navigation.footer
+    - navigation.indexes
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - content.action.edit
+    - content.action.view
+  palette:
+    - scheme: default
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: deep purple
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+
+plugins:
+  - search
+  - macros
+  - i18n:
+      docs_structure: folder
+      languages:
+        - locale: en
+          default: true
+          name: English
+          build: true
+        - locale: vi
+          name: Tiếng Việt
+          build: false   # enable when translations are ready under docs/vi/
+
+extra_css:
+  - assets/stylesheets/extra.css
+
+extra_javascript:
+  - assets/javascripts/tasklist.js
+
+extra:
+  version:
+    provider: mike
+    default: latest
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/iROSLink
+  repos:
+    esp32: https://github.com/iROSLink/iroslink-esp32
+    docker: https://github.com/iROSLink/iroslink-docker
+    docs: https://github.com/iROSLink/iroslink-docs
+
+validation:
+  nav:
+    omitted_files: warn
+    not_found: warn
+  links:
+    not_found: warn
+    anchors: warn
+    absolute_links: ignore
+    unrecognized_links: warn
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+  - pymdownx.inlinehilite
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+  - tables
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Docs:
+      - Getting Started:
+          - Overview: getting-started/index.md
+          - Sensor Preview (no hardware): getting-started/sensor-preview.md
+          - Simple Robot:
+            - Build & Configure: getting-started/build-robot/build-and-configure.md
+            - Drive & Calibrate: getting-started/build-robot/drive-and-calibrate.md
+      - Demos:
+          - Vacuum Robot: 
+            - Hardware: demos/vacuum-robot.md
+            - Explore Mode: demos/explore.md
+            - Clean Mode: demos/clean.md
+      - Reference:
+          - App:
+              - Operating Modes: reference/modes.md
+              - App Stages & Lifecycle: reference/app-stages.md
+              - Data Tab & Maps: reference/data-tab.md
+              - Control Tab & Calibration: reference/control-tab.md
+              - Settings: reference/configuration.md
+          - Data & Topics:
+              - ROS2 Topics: reference/topics.md
+              - Remote Commands: reference/commands.md
+              - ROS2 Teleoperation (Linux): reference/ros2-linux.md
+          - Networking:
+              - Zenoh Networking: reference/zenoh-networking.md
+              - mDNS & Device Discovery: reference/mdns.md
+          - Troubleshooting: reference/troubleshooting.md
+  - About:
+      - Credits: about/credits.md
+      - EULA: about/eula.md
+      - Changelog: about/changelog.md

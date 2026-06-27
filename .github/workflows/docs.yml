@@ -1,0 +1,78 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# Triggering:
+#   git tag v0.1 && git push origin v0.1
+#   → deploys docs at /v0.1/ and updates the `latest` alias
+#
+#   push to main → deploys a `dev` preview at /dev/
+# ─────────────────────────────────────────────────────────────────────────────
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write   # required: mike pushes to gh-pages branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # mike needs full git history to list existing versions
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: requirements-docs.txt
+
+      - name: Install MkDocs + plugins
+        run: pip install -r requirements-docs.txt
+
+      - name: Configure Git identity (required by mike)
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Validate — build with strict mode and check for broken links
+        working-directory: .
+        run: |
+          mkdocs build --strict 2>&1 | tee /tmp/mkdocs-build.log || {
+            echo "::error::MkDocs build failed (strict mode — check warnings above)"
+            exit 1
+          }
+          if grep -qE "does not contain" /tmp/mkdocs-build.log; then
+            echo "::error::Broken internal links detected:"
+            grep "does not contain" /tmp/mkdocs-build.log
+            exit 1
+          fi
+
+      # On a version tag (v0.1, v1.0, …): deploy that version and update `latest`
+      - name: Deploy versioned docs
+        if: startsWith(github.ref, 'refs/tags/')
+        run: |
+          mike deploy --push --update-aliases "$GITHUB_REF_NAME" latest
+          mike set-default --push latest
+
+      # On a push to main: update `latest` in place (no new version entry)
+      - name: Deploy latest
+        if: github.ref == 'refs/heads/main'
+        run: |
+          mike deploy --push latest
+          mike set-default --push latest
+
+      # Write CNAME to gh-pages root so GitHub Pages keeps the custom domain
+      - name: Set custom domain
+        run: |
+          git fetch origin gh-pages
+          git checkout gh-pages
+          echo "iroslink.app" > CNAME
+          git add CNAME
+          git diff --cached --quiet || git commit -m "chore: set custom domain"
+          git push origin gh-pages

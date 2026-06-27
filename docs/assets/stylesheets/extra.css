@@ -1,0 +1,39 @@
+/* Phone UI screenshots — portrait */
+.img-phone,
+.img-phone img {
+  display: block !important;
+  margin: 12px auto !important;
+  max-width: 240px !important;
+  width: 100% !important;
+  border-radius: 8px;
+}
+
+/* Wide screenshots — Foxglove, RViz */
+.img-wide,
+.img-wide img {
+  display: block !important;
+  margin: 12px auto !important;
+  max-width: 720px !important;
+  width: 100% !important;
+  border-radius: 8px;
+}
+
+/* Interactive task list checkboxes */
+.task-list-item input[type="checkbox"] {
+  cursor: pointer;
+}
+
+.task-list-item input[type="checkbox"]:checked + span {
+  opacity: 0.55;
+  text-decoration: line-through;
+}
+
+/* Circuit / wiring diagrams */
+.img-diagram,
+.img-diagram img {
+  display: block !important;
+  margin: 12px auto !important;
+  max-width: 560px !important;
+  width: 100% !important;
+  border-radius: 8px;
+}
