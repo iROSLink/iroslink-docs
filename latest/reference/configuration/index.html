@@ -1,0 +1,2952 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Turn your iPhone into a ROS2 sensor bridge for an affordable indoor robot.">
+      
+      
+      
+        <link rel="canonical" href="https://iroslink.app/latest/reference/configuration/">
+      
+      
+        <link rel="prev" href="../control-tab/">
+      
+      
+        <link rel="next" href="../topics/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/icons/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Settings - iROSLink Docs (BETA)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#configuration-details" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <div data-md-color-scheme="default" data-md-component="outdated" hidden>
+        
+      </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="iROSLink Docs (BETA)" class="md-header__button md-logo" aria-label="iROSLink Docs (BETA)" data-md-component="logo">
+      
+  <img src="../../assets/icons/logo.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            iROSLink Docs (BETA)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Settings
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="deep-purple" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/iROSLink/iroslink-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    iroslink-docs
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../getting-started/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Docs
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../about/credits/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  About
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="iROSLink Docs (BETA)" class="md-nav__button md-logo" aria-label="iROSLink Docs (BETA)" data-md-component="logo">
+      
+  <img src="../../assets/icons/logo.png" alt="logo">
+
+    </a>
+    iROSLink Docs (BETA)
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/iROSLink/iroslink-docs" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    iroslink-docs
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Docs
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Docs
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_1" id="__nav_2_1_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/sensor-preview/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sensor Preview (no hardware)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Simple Robot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Simple Robot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/build-robot/build-and-configure/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build & Configure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/build-robot/drive-and-calibrate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Drive & Calibrate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Demos
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Demos
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Vacuum Robot
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Vacuum Robot
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../demos/vacuum-robot/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Hardware
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../demos/explore/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Explore Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../demos/clean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Clean Mode
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Reference
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Reference
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_1" id="__nav_2_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    App
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../modes/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Operating Modes
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../app-stages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    App Stages & Lifecycle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data Tab & Maps
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../control-tab/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Control Tab & Calibration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Settings
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-bridge-zenoh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS2 bridge (Zenoh)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foxglove-websocket-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foxglove WebSocket server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slam-quality-rtabmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLAM quality (RTABMap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SLAM quality (RTABMap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-insertion-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node insertion rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slam-debug-loop-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLAM debug (loop closure)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SLAM debug (loop closure)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-diagnostics-read-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live diagnostics (read-only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-decimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image decimation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame-rate-to-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame rate to SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-cloud-noise-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point cloud noise filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-getting-a-better-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips: getting a better map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips: getting a better map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-loop-closures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More loop closures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaner-point-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaner point cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-cpu-prevent-thermal-throttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduce CPU / prevent thermal throttle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-cpu-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking CPU usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-tab-keys-autonomous-idd-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control tab keys (Autonomous IDD only)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App behaviour
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_2" id="__nav_2_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Data & Topics
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Data & Topics
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../topics/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS2 Topics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Remote Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ros2-linux/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ROS2 Teleoperation (Linux)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3_3" id="__nav_2_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Networking
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Networking
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../zenoh-networking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Zenoh Networking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mdns/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    mDNS & Device Discovery
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    About
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/credits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Credits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/eula/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    EULA
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../about/changelog/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ros2-bridge-zenoh" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ROS2 bridge (Zenoh)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#foxglove-websocket-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Foxglove WebSocket server
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#operating-mode" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Operating mode
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slam-quality-rtabmap" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLAM quality (RTABMap)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SLAM quality (RTABMap)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#input-filtering" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Input filtering
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#node-insertion-rate" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Node insertion rate
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloud-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cloud map
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slam-debug-loop-closure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        SLAM debug (loop closure)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SLAM debug (loop closure)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#live-diagnostics-read-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Live diagnostics (read-only)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#feature-extraction" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Feature extraction
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image-decimation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Image decimation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#frame-rate-to-slam" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Frame rate to SLAM
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#point-cloud-noise-filter" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Point cloud noise filter
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-getting-a-better-map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tips: getting a better map
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Tips: getting a better map">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#more-loop-closures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        More loop closures
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleaner-point-cloud" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleaner point cloud
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reduce-cpu-prevent-thermal-throttle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Reduce CPU / prevent thermal throttle
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tracking-cpu-usage" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tracking CPU usage
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#control-tab-keys-autonomous-idd-only" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Control tab keys (Autonomous IDD only)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#app-behaviour" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        App behaviour
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+    <a href="https://github.com/iROSLink/iroslink-docs/edit/main/public/iroslink-docs/docs/en/reference/configuration.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
+    </a>
+  
+  
+    
+      
+    
+    <a href="https://github.com/iROSLink/iroslink-docs/raw/main/public/iroslink-docs/docs/en/reference/configuration.md" title="View source of this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
+    </a>
+  
+
+
+<h1 id="configuration-details">Configuration Details<a class="headerlink" href="#configuration-details" title="Permanent link">&para;</a></h1>
+<p>All settings are stored in UserDefaults and can be exported, imported, or reset via the <strong>Data tab</strong> — see <a href="../data-tab/">Data Tab — Maps &amp; Config</a>.</p>
+<hr />
+<h2 id="ros2-bridge-zenoh">ROS2 bridge (Zenoh)<a class="headerlink" href="#ros2-bridge-zenoh" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>zenohIsRouter</code></td>
+<td>Bool</td>
+<td><code>false</code></td>
+<td><code>false</code> = Client (connects out to a router). <code>true</code> = Router (phone listens on :7447).</td>
+</tr>
+<tr>
+<td><code>zenohLocator</code></td>
+<td>String</td>
+<td>—</td>
+<td>Client mode only: address of the Zenoh router, e.g. <code>tcp/192.168.1.100:7447</code>.</td>
+</tr>
+<tr>
+<td><code>autoConnect</code></td>
+<td>Bool</td>
+<td><code>true</code></td>
+<td>Auto-connect to Zenoh on app launch.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Power impact of Zenoh mode:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Mode</th>
+<th>Power draw</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Router (<code>zenohIsRouter = true</code>)</td>
+<td>Higher</td>
+<td>Phone runs a Rust TCP listener on :7447 and manages all peer routing. Background threads run continuously even when no robot is connected.</td>
+</tr>
+<tr>
+<td>Client (<code>zenohIsRouter = false</code>)</td>
+<td>Lower</td>
+<td>Phone dials out to an external router and only maintains one outbound session. Preferred for battery life when a router (e.g. Raspberry Pi) is already on the network.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="foxglove-websocket-server">Foxglove WebSocket server<a class="headerlink" href="#foxglove-websocket-server" title="Permanent link">&para;</a></h2>
+<p>The Foxglove WebSocket server (<code>foxgloveEnabled</code>) streams all topics to <a href="https://foxglove.dev">Foxglove Studio</a> over a local WebSocket connection on port 8765. It runs independently of Zenoh — you can use it with or without a Zenoh connection.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>foxgloveEnabled</code></td>
+<td>Bool</td>
+<td><code>false</code></td>
+<td>Enable the Foxglove WebSocket server. Advertises all topics to Foxglove Studio on the local network.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Power impact:</strong> The Foxglove server has a measurable power cost even when no client is connected, because the listener socket is held open and every published message is serialised (CDR-encoded) and dispatched to all subscribers. With an active Foxglove Studio connection receiving high-rate topics (camera, point cloud, IMU), the additional CPU load can be significant — comparable to adding another Zenoh peer. Recommendations:</p>
+<ul>
+<li>Disable when not actively debugging in Foxglove.</li>
+<li>On battery, prefer enabling Foxglove briefly to capture a session rather than leaving it on continuously.</li>
+<li>High-bandwidth topics (<code>/camera/image_raw/compressed</code>, <code>/camera/depth/points</code>, <code>/cloud_map</code>) are the largest contributors — unsubscribe from panels you are not viewing.</li>
+</ul>
+<hr />
+<h2 id="operating-mode">Operating mode<a class="headerlink" href="#operating-mode" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Values</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>appMode</code></td>
+<td>String</td>
+<td><code>"sensorBridge"</code></td>
+<td><code>"sensorBridge"</code> · <code>"autonomousIDD"</code></td>
+</tr>
+</tbody>
+</table>
+<p>See <a href="../modes/">Operating Modes</a> for what each mode does.</p>
+<hr />
+<h2 id="slam-quality-rtabmap">SLAM quality (RTABMap)<a class="headerlink" href="#slam-quality-rtabmap" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p><strong>Tuning difficulty:</strong> RTAB-Map has hundreds of interdependent parameters. The ones exposed here cover the highest-impact knobs for mobile LiDAR SLAM, but finding the right combination for a specific environment takes iteration. Start with defaults and change one parameter at a time, then Reset the map to compare. The official <a href="https://github.com/introlab/rtabmap/wiki/Change-parameters">RTAB-Map parameter guide</a> and the <a href="https://wiki.ros.org/rtabmap_ros">RTAB-Map ROS wiki</a> are the best reference for understanding how upstream defaults differ from the values chosen here.</p>
+</blockquote>
+<p>These map directly to RTAB-Map C++ parameters fed through <code>iROSBridgeSetCloudParams</code> and <code>iROSBridgeSetSLAMParams</code>. Changes apply immediately without a restart; the cloud rebuild happens on the next SLAM node (every 5 nodes visible in <code>/cloud_map</code>).</p>
+<h3 id="input-filtering">Input filtering<a class="headerlink" href="#input-filtering" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>RTAB-Map param</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rtabmapEnabled</code></td>
+<td>Bool</td>
+<td><code>true</code></td>
+<td>—</td>
+<td>Enable RTAB-Map loop closure. Off = ARKit VIO only: no loop closure, no <code>/cloud_map</code>, no map saving. Lighter on CPU (~30% less). Use when environment is dark or featureless.</td>
+</tr>
+<tr>
+<td><code>rtabMaxDepth</code></td>
+<td>Double</td>
+<td><code>2.0</code> m</td>
+<td><code>RGBD/DepthMax</code></td>
+<td>Clips depth measurements beyond this range before feeding SLAM. Range 1.0–5.0 m.</td>
+</tr>
+<tr>
+<td><code>rtabVoxelSize</code></td>
+<td>Double</td>
+<td><code>0.05</code> m</td>
+<td><code>Grid/CellSize</code> / voxel filter</td>
+<td>Downsamples the point cloud to one point per voxel cell before SLAM processing. <code>0.0</code> = disabled (no downsampling).</td>
+</tr>
+<tr>
+<td><code>rtabDecimation</code></td>
+<td>Int</td>
+<td><code>4</code></td>
+<td>depth decimation</td>
+<td>Keeps 1 in N depth points fed to SLAM. Higher = fewer points, less CPU, coarser cloud.</td>
+</tr>
+<tr>
+<td><code>rtabMinConf2</code></td>
+<td>Int</td>
+<td><code>1</code></td>
+<td>ARKit confidence mask</td>
+<td>Filters ARKit LiDAR pixels by confidence before SLAM: <code>0</code> = all pixels, <code>1</code> = medium + high only, <code>2</code> = high confidence only.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Map quality tradeoffs:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Goal</th>
+<th>Recommended changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Better wall detail / denser cloud</td>
+<td><code>rtabDecimation</code> → 2, <code>rtabVoxelSize</code> → 0.02–0.03 m</td>
+</tr>
+<tr>
+<td>Cleaner cloud, fewer floaters</td>
+<td><code>rtabMinConf2</code> → 1 or 2; enable noise filter (see below)</td>
+</tr>
+<tr>
+<td>Larger room coverage</td>
+<td><code>rtabMaxDepth</code> → 3.0–4.0 m</td>
+</tr>
+<tr>
+<td>Reduce CPU / thermal throttle</td>
+<td><code>rtabDecimation</code> → 6–8, <code>rtabVoxelSize</code> → 0.05 m, <code>rtabMaxDepth</code> → 1.5 m</td>
+</tr>
+</tbody>
+</table>
+<h3 id="node-insertion-rate">Node insertion rate<a class="headerlink" href="#node-insertion-rate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>RTAB-Map param</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rtabLinearUpdate</code></td>
+<td>Double</td>
+<td><code>0.05</code> m</td>
+<td><code>RGBD/LinearUpdate</code></td>
+<td>Minimum travel (metres) before RTAB-Map adds a new SLAM node. Upstream default is 0.1 m; app uses 0.05 m for denser nodes.</td>
+</tr>
+<tr>
+<td><code>rtabAngularUpdate</code></td>
+<td>Double</td>
+<td><code>0.05</code> rad</td>
+<td><code>RGBD/AngularUpdate</code></td>
+<td>Minimum angular change (radians) before a new SLAM node is added. Upstream default is 0.1 rad.</td>
+</tr>
+</tbody>
+</table>
+<p>Lower values → more nodes → more accurate loop closure but more memory and CPU. For slow-moving robots keep at 0.05 m / 0.05 rad. For fast sweeps raise to 0.10 m / 0.10 rad.</p>
+<h3 id="cloud-map">Cloud map<a class="headerlink" href="#cloud-map" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cloudMapEnabled</code></td>
+<td>Bool</td>
+<td><code>false</code></td>
+<td>Publish the full accumulated <code>/cloud_map</code> on every SLAM event. Expensive at scale (serialises the entire cloud over the bridge each time). Use <code>/camera/depth/points</code> for incremental updates instead. Gated at the C++ level — no CPU cost when disabled.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="slam-debug-loop-closure">SLAM debug (loop closure)<a class="headerlink" href="#slam-debug-loop-closure" title="Permanent link">&para;</a></h2>
+<p>These control how RTAB-Map detects revisited places. Accessible under <strong>Settings → SLAM Debug (Loop Closure)</strong>.</p>
+<h3 id="live-diagnostics-read-only">Live diagnostics (read-only)<a class="headerlink" href="#live-diagnostics-read-only" title="Permanent link">&para;</a></h3>
+<p>The SLAM Debug section shows live stats updated at 1 Hz:</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Loop closures</strong></td>
+<td>Total accepted loop closures this session. A healthy map will accumulate these as you revisit areas.</td>
+</tr>
+<tr>
+<td><strong>Last LC node</strong></td>
+<td>Node ID of the most recent loop closure. Useful for correlating with map artifacts.</td>
+</tr>
+<tr>
+<td><strong>LC hypothesis</strong></td>
+<td>Confidence of the last loop closure (0–1). Values &gt; 0.5 are candidates; accepted closures pass additional geometric verification.</td>
+</tr>
+<tr>
+<td><strong>Vis inliers / matches</strong></td>
+<td>Inlier feature count / total candidate matches for the last loop closure attempt. Inliers / Matches ratio shows match quality — below 0.3 usually means a false positive was rejected.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="feature-extraction">Feature extraction<a class="headerlink" href="#feature-extraction" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>RTAB-Map param</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rtabVisMinInliers</code></td>
+<td>Int</td>
+<td><code>50</code></td>
+<td><code>Vis/MinInliers</code></td>
+<td>Minimum geometric inliers required to accept a loop closure. RTAB-Map upstream default is 20; app default is 50 (stricter). Lower = more closures (risk of ghost corrections). Higher = fewer false positives but may miss real revisits. Range 5–100.</td>
+</tr>
+<tr>
+<td><code>rtabVisMaxFeatures</code></td>
+<td>Int</td>
+<td><code>400</code></td>
+<td><code>Vis/MaxFeatures</code></td>
+<td>Maximum keypoints extracted per frame for loop closure detection. Upstream default is 1000; app default is 400 to save CPU. Higher → better recall in repetitive environments (long corridors) at the cost of ~2× CPU for feature extraction. Options: 200 / 400 / 600 / 800.</td>
+</tr>
+<tr>
+<td><code>rtabVisFeatureType</code></td>
+<td>Int</td>
+<td><code>6</code></td>
+<td><code>Vis/FeatureType</code></td>
+<td>Feature detector + descriptor used for visual place recognition.</td>
+</tr>
+</tbody>
+</table>
+<p>Feature type options and tradeoffs:</p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>Name</th>
+<th>CPU</th>
+<th>Quality</th>
+<th>Best for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>6</code></td>
+<td>GFTT/BRIEF (default)</td>
+<td>Lowest</td>
+<td>Good</td>
+<td>Room-scale, well-lit, fast operation</td>
+</tr>
+<tr>
+<td><code>2</code></td>
+<td>ORB</td>
+<td>Low</td>
+<td>Better under blur</td>
+<td>Motion blur, faster movement</td>
+</tr>
+<tr>
+<td><code>7</code></td>
+<td>BRISK</td>
+<td>Medium</td>
+<td>Rotation-invariant</td>
+<td>Environments with large viewpoint changes</td>
+</tr>
+<tr>
+<td><code>9</code></td>
+<td>ORB-Octree</td>
+<td>Medium</td>
+<td>More uniform coverage</td>
+<td>Large uniform walls with few texture features</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p><strong>Note:</strong> Changing feature type requires resetting the map (Scan tab → Reset). The visual dictionary is incompatible between detector types.</p>
+</blockquote>
+<h3 id="image-decimation">Image decimation<a class="headerlink" href="#image-decimation" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>RTAB-Map param</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rtabImagePreDecim</code></td>
+<td>Int</td>
+<td><code>2</code></td>
+<td><code>Mem/ImagePreDecimation</code></td>
+<td>Downscales the RGB image before feature extraction. <code>1</code> = full resolution, <code>2</code> = half (default), <code>4</code> = quarter. Upstream default is 1 (no decimation); app default is 2 to halve feature extraction CPU. Full res (<code>1</code>) improves loop closure reliability in large or repetitive spaces.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="frame-rate-to-slam">Frame rate to SLAM<a class="headerlink" href="#frame-rate-to-slam" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rtabSkip</code></td>
+<td>Int</td>
+<td><code>10</code></td>
+<td>Feed 1-in-N ARKit frames (~30 Hz) to RTAB-Map. <code>10</code> ≈ 3 Hz to SLAM. Lower = more frames → better tracking and more nodes, but heavier CPU. Raise if you see "retaining ARFrames" warning in logs (means SLAM is slower than ARKit delivery).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>CPU impact of <code>rtabSkip</code>:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Value</th>
+<th>SLAM Hz</th>
+<th>CPU cost</th>
+<th>Use when</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>1</code></td>
+<td>30 Hz</td>
+<td>Very high</td>
+<td>Debugging only</td>
+</tr>
+<tr>
+<td><code>5</code></td>
+<td>6 Hz</td>
+<td>High</td>
+<td>Slow robot, need dense nodes</td>
+</tr>
+<tr>
+<td><code>10</code></td>
+<td>3 Hz</td>
+<td>Medium (default)</td>
+<td>Normal operation</td>
+</tr>
+<tr>
+<td><code>20</code></td>
+<td>1.5 Hz</td>
+<td>Low</td>
+<td>Large rooms, fast movement</td>
+</tr>
+<tr>
+<td><code>60</code></td>
+<td>0.5 Hz</td>
+<td>Very low</td>
+<td>Thermal relief only</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="point-cloud-noise-filter">Point cloud noise filter<a class="headerlink" href="#point-cloud-noise-filter" title="Permanent link">&para;</a></h2>
+<p>Applied after depth unprojection, before occupancy grid and SLAM input.</p>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cloudNoiseRadius</code></td>
+<td>Double</td>
+<td><code>0.0</code> m</td>
+<td>Radius for neighbor search. <code>0</code> = disabled. Good starting value: <code>0.05</code> m. Each point with fewer than <code>cloudNoiseMinNeighbors</code> neighbors within this radius is removed.</td>
+</tr>
+<tr>
+<td><code>cloudNoiseMinNeighbors</code></td>
+<td>Int</td>
+<td><code>1</code></td>
+<td>Points with fewer neighbors than this within the search radius are discarded. Raise to 2–4 for aggressive filtering.</td>
+</tr>
+<tr>
+<td><code>gridRayTracing</code></td>
+<td>Bool</td>
+<td><code>true</code></td>
+<td>Enables free-space ray tracing: clears occupancy voxels between the sensor origin and each depth measurement. Removes phantom obstacles behind surfaces and stale occupied cells as the robot moves. Slight CPU cost per frame; keep enabled for navigation.</td>
+</tr>
+<tr>
+<td><code>gridNormalsSegmentation</code></td>
+<td>Bool</td>
+<td><code>true</code></td>
+<td>Classifies depth points as ground/obstacle using surface normals (angle relative to gravity) instead of height thresholds alone. Detects stair risers and drop-offs. Can misfire with sparse/decimated depth — if the occupancy grid shows noise on flat floors, switch to height-only (disable).</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Tuning the noise filter:</strong></p>
+<p>Floaters above the floor → enable filter, <code>radius</code> = 0.05 m, <code>minNeighbors</code> = 2.
+Walls look eroded → filter is too aggressive; lower <code>minNeighbors</code> to 1 or increase <code>radius</code>.
+Floor classified as obstacle → disable <code>gridNormalsSegmentation</code> or tune camera height parameters.</p>
+<hr />
+<h2 id="tips-getting-a-better-map">Tips: getting a better map<a class="headerlink" href="#tips-getting-a-better-map" title="Permanent link">&para;</a></h2>
+<h3 id="more-loop-closures">More loop closures<a class="headerlink" href="#more-loop-closures" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Move <strong>slowly and steadily</strong> — <code>RGBD/LinearUpdate</code> adds nodes based on travel; fast sweeps produce sparse graphs.</li>
+<li><strong>Revisit areas from similar angles</strong> — loop closure is view-dependent. Approaching from the opposite direction helps.</li>
+<li>Raise <code>rtabVisMaxFeatures</code> to 600–800 in repetitive or textureless environments (long corridors, white walls).</li>
+<li>Lower <code>rtabVisMinInliers</code> to 30–40 if the live stats show high match counts but LC hypothesis never crosses 0.5.</li>
+</ul>
+<h3 id="cleaner-point-cloud">Cleaner point cloud<a class="headerlink" href="#cleaner-point-cloud" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enable the noise filter with <code>cloudNoiseRadius</code> = 0.05 m, <code>cloudNoiseMinNeighbors</code> = 2.</li>
+<li>Keep <code>gridRayTracing</code> enabled — it removes ghost points left behind as the robot moves.</li>
+<li>Use <code>rtabMinConf2</code> = 1 (medium+) to skip low-confidence LiDAR pixels; step up to 2 (high only) in cluttered spaces.</li>
+<li>Lower <code>rtabVoxelSize</code> to 0.02–0.03 m for denser output (trades CPU).</li>
+</ul>
+<h3 id="reduce-cpu-prevent-thermal-throttle">Reduce CPU / prevent thermal throttle<a class="headerlink" href="#reduce-cpu-prevent-thermal-throttle" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Raise <code>rtabSkip</code> to 15–20 (drops SLAM Hz, not ARKit tracking Hz).</li>
+<li>Raise <code>rtabDecimation</code> to 6–8.</li>
+<li>Raise <code>rtabVoxelSize</code> to 0.05–0.10 m.</li>
+<li>Set <code>rtabImagePreDecim</code> to 4 (quarter resolution for feature extraction).</li>
+<li>Disable <code>cloudMapEnabled</code> — rebuilding the full cloud every node is expensive at scale.</li>
+</ol>
+<hr />
+<h2 id="tracking-cpu-usage">Tracking CPU usage<a class="headerlink" href="#tracking-cpu-usage" title="Permanent link">&para;</a></h2>
+<p>iROSLink publishes live diagnostics to <code>/diag/cpu_percent</code> and <code>/diag/ram_mb</code> (std_msgs/Float32) and mirrors them to Foxglove over WebSocket.</p>
+<p><strong>In Foxglove Studio:</strong>
+- Add a <strong>Plot</strong> panel → subscribe to <code>/diag/cpu_percent</code> and <code>/diag/ram_mb</code>.
+- Watch for CPU spikes &gt; 80% sustained — this precedes thermal throttle and ARKit frame drops.</p>
+<p><strong>In-app diagnostics (Topics tab):</strong></p>
+<table>
+<thead>
+<tr>
+<th>Topic</th>
+<th>Type</th>
+<th>What it shows</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>/diag/cpu_percent</code></td>
+<td>Float32</td>
+<td>Process CPU % (sampled every 10 s)</td>
+</tr>
+<tr>
+<td><code>/diag/ram_mb</code></td>
+<td>Float32</td>
+<td>App RAM usage in MB</td>
+</tr>
+<tr>
+<td><code>/diag/speed_cmps</code></td>
+<td>Float32</td>
+<td>Forward speed cm/s (from ARKit pose diff)</td>
+</tr>
+<tr>
+<td><code>/diag/yaw_rate_dps</code></td>
+<td>Float32</td>
+<td>Yaw rate deg/s</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Signs of CPU pressure and remedies:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>"Retaining ARFrames" in logs</td>
+<td>SLAM can't keep up with ARKit</td>
+<td>Raise <code>rtabSkip</code></td>
+</tr>
+<tr>
+<td>Map stops updating</td>
+<td>SLAM thread stalled</td>
+<td>Raise <code>rtabDecimation</code>, <code>rtabVoxelSize</code></td>
+</tr>
+<tr>
+<td>ARKit tracking degrades</td>
+<td>Thermal throttle</td>
+<td>Lower <code>rtabMaxDepth</code>, disable <code>cloudMapEnabled</code></td>
+</tr>
+<tr>
+<td>High RAM (&gt; 400 MB)</td>
+<td>Growing node graph</td>
+<td>Raise <code>rtabLinearUpdate</code> to space out nodes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="control-tab-keys-autonomous-idd-only">Control tab keys <em>(Autonomous IDD only)</em><a class="headerlink" href="#control-tab-keys-autonomous-idd-only" title="Permanent link">&para;</a></h2>
+<p>→ <a href="../control-tab/">Control Tab — Settings &amp; Calibration</a> — occupancy grid, robot body, camera rates, navigation, motor calibration, autonomous behaviours, gamepad buttons</p>
+<hr />
+<h2 id="app-behaviour">App behaviour<a class="headerlink" href="#app-behaviour" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Key</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>keepScreenOn</code></td>
+<td>Bool</td>
+<td><code>true</code></td>
+<td>Disable auto-lock while app is running.</td>
+</tr>
+<tr>
+<td><code>stopSessionOnComplete</code></td>
+<td>Bool</td>
+<td>—</td>
+<td>Auto-pause SLAM when explore or clean finishes.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../control-tab/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Control Tab &amp; Calibration">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Control Tab & Calibration
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../topics/" class="md-footer__link md-footer__link--next" aria-label="Next: ROS2 Topics">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                ROS2 Topics
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/iROSLink" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.expand", "navigation.top", "navigation.footer", "navigation.indexes", "search.highlight", "search.suggest", "content.code.copy", "content.action.edit", "content.action.view"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"default": "latest", "provider": "mike"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../assets/javascripts/tasklist.js"></script>
+      
+    
+  </body>
+</html>
